@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Headings from "../../ui/Headings";
 import { useNavigate } from "react-router-dom";
 
-const BackGroundImage = styled.div`
+export const BackGroundImage = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;

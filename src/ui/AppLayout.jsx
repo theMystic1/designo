@@ -6,7 +6,7 @@ function AppLayout() {
   return (
     <div className="font-jost">
       <Nav />
-      <main className="relative  sm:px-10  md:px-20  mb-20">
+      <main className="relative  sm:px-10  md:px-20 lg:px-40 xl:px-80 mb-20">
         <Outlet />
       </main>
       <Footer />

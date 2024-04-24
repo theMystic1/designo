@@ -9,6 +9,7 @@ export default {
         peach: {
           600: "#e7816b",
           200: "#ffad9b",
+          300: "#5d0202",
         },
         white: {
           0: "#ffffff",

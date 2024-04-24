@@ -4,7 +4,7 @@ export const StyledHero = styled.div`
   background-image: url("/assets/home/desktop/bg-pattern-hero-home.svg");
   /* width: 100%; */
   max-height: 80rem;
-
+  /* max-width: 100rem; */
   @media (min-width: 640px) {
     border-radius: 1rem;
   }

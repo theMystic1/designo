@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 const StyledNav = styled.nav`
@@ -49,11 +49,19 @@ const StyledList = styled.li`
 
 function Nav() {
   return (
-    <StyledNav className="top-0 left-0 right-0 sm:px-10  md:px-20 h-20">
-      <Logo>
-        <img src="" alt="" />
-        <p className="tracking-widest font-bold uppercase text-3xl">Designo</p>
-      </Logo>
+    <StyledNav className="top-0 left-0 right-0 sm:px-10  md:px-20 lg:px-40 xl:px-80 mb-20 h-20">
+      <NavLink to="/">
+        <Logo>
+          <img
+            src="/assets/shared/desktop/logo-dark.png"
+            alt=""
+            className="w-40"
+          />
+          {/* <p className="tracking-widest font-bold uppercase text-3xl">
+            Designo
+          </p> */}
+        </Logo>
+      </NavLink>
       <Ul>
         <StyledList>
           <Link to="/about">our company</Link>
@@ -75,8 +83,11 @@ export function FooterNav({ className }) {
   return (
     <StyledNav className={className}>
       <Logo>
-        <img src="" alt="" />
-        <p className="tracking-widest font-bold uppercase text-3xl">Designo</p>
+        <img
+          src="/assets/shared/desktop/logo-light.png"
+          alt=""
+          className="w-40"
+        />
       </Logo>
       <Ul type="footer" className="flex-col md:flex-row">
         <StyledList>
@@ -94,6 +105,8 @@ export function FooterNav({ className }) {
     </StyledNav>
   );
 }
+
+// sm:px-10  md:px-20 lg:px-40 xl:px-80 mb-20
 
 Ul.defaultProps = {
   type: "nav",

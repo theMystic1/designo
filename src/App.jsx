@@ -9,6 +9,7 @@ import GraphicsDesign from "./pages/GraphicsDesign";
 import Locations from "./pages/Locations";
 import WebDesign from "./pages/WebDesign";
 import GlobalStyles from "./Styles/GlobalStyles";
+// import GlobalStyles from "./ui/Styles/GlobalStyles";
 
 function App() {
   return (
