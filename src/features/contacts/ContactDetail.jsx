@@ -7,14 +7,6 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useInview } from "../../hooks/useInview";
 
-/*
-  
-
-  
-  
-  Submit
-*/
-
 const Form = styled.form`
   display: inline-block;
 `;
