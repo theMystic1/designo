@@ -33,13 +33,13 @@ function App() {
         <Routes>
           <Route element={<AppLayout />}>
             <Route index element={<Navigate replace to="home" />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/appdesign" element={<AppDesign />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contacts" element={<Contacts />} />
-            <Route path="/graphicsDesign" element={<GraphicsDesign />} />
-            <Route path="/locations" element={<Locations />} />
-            <Route path="/webDesign" element={<WebDesign />} />
+            <Route path="home" element={<Home />} />
+            <Route path="appdesign" element={<AppDesign />} />
+            <Route path="about" element={<About />} />
+            <Route path="contacts" element={<Contacts />} />
+            <Route path="graphicsDesign" element={<GraphicsDesign />} />
+            <Route path="locations" element={<Locations />} />
+            <Route path="webDesign" element={<WebDesign />} />
             <Route path="*" element={<PageNotFound />} />
           </Route>
         </Routes>
