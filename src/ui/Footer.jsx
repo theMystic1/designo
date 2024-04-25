@@ -7,6 +7,8 @@ import { FooterNav } from "./Nav";
 import { IoLogoFacebook } from "react-icons/io";
 import { FaPinterest, FaTwitter, FaYoutube } from "react-icons/fa";
 import { SiInstagram } from "react-icons/si";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useInview } from "../hooks/useInview";
 
 const StyledFooter = styled.footer`
   display: flex;
@@ -58,26 +60,42 @@ const LogoList = styled.ul`
 `;
 
 function Footer() {
-  return (
-    <StyledFooter className="mt-40 sm:px-10  md:px-20 lg:px-40 xl:px-80   absolute">
-      <StyledHero className="flex bg-peach-600 absolute lg:top-[-200px] sm:top-[-100px] md:top-[-250px] top-[-250px] w-[80%] p-8 md:p-24 flex-col  justify-between items-center text-white-0   lg:flex-row">
-        <div className="w-full lg:w-1/2 ">
-          <Headings
-            as="h2"
-            className="mb-10 text-lg lg:text-3xl text-center lg:teaxt-start"
-          >
-            Let’s talk about your project
-          </Headings>
-          <StyledParagraph className="text-center lg:text-start my-8 lg:my-0 ">
-            Ready to take it to the next level? Contact us today and find out
-            how our expertise can help your business grow.
-          </StyledParagraph>
-        </div>
+  const location = useLocation();
+  const isContacts = location.pathname.includes("/contacts");
+  const navigate = useNavigate();
 
-        <div>
-          <StyledButton> Get in touch</StyledButton>
-        </div>
-      </StyledHero>
+  function handleClick() {
+    navigate("/contacts");
+  }
+
+  const { ref, style } = useInview();
+
+  return (
+    <StyledFooter
+      className="mt-40 sm:px-10  md:px-20 lg:px-40 xl:px-80   absolute"
+      ref={ref}
+      style={style}
+    >
+      {isContacts ? null : (
+        <StyledHero className="flex bg-peach-600 absolute lg:top-[-200px] sm:top-[-100px] md:top-[-250px] top-[-250px] w-[80%] p-8 md:p-24 flex-col  justify-between items-center text-white-0   lg:flex-row">
+          <div className="w-full lg:w-1/2 ">
+            <Headings
+              as="h2"
+              className="mb-10 text-lg lg:text-3xl text-center lg:teaxt-start"
+            >
+              Let’s talk about your project
+            </Headings>
+            <StyledParagraph className="text-center lg:text-start my-8 lg:my-0 ">
+              Ready to take it to the next level? Contact us today and find out
+              how our expertise can help your business grow.
+            </StyledParagraph>
+          </div>
+
+          <div>
+            <StyledButton onClick={handleClick}> Get in touch</StyledButton>
+          </div>
+        </StyledHero>
+      )}
       <div className="w-full relative  top-[140px]  text-white-0 pb-10">
         <FooterNav className=" flex-col md:flex-row justify-between border-b border-b-white-200 pb-8 " />
         <Info className="grid-cols-1 items-center justify-center md:grid-cols-3 mt-20">

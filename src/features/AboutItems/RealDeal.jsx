@@ -1,11 +1,18 @@
+import { useInview } from "../../hooks/useInview";
 import Headings from "../../ui/Headings";
 import { StyledHero } from "../../ui/Hero";
 import StyledParagraph from "../../ui/StyledParagraph";
 import { BigFlex, SmallFlex } from "./AboutFlex";
 
 function RealDeal() {
+  const { ref, style } = useInview();
+
   return (
-    <StyledHero className="flex lex lg:flex-row flex-col-reverse bg-peach-200 bg-opacity-50  mt-20">
+    <StyledHero
+      className="flex lex lg:flex-row flex-col-reverse bg-peach-200 bg-opacity-50  mt-20"
+      ref={ref}
+      style={style}
+    >
       <BigFlex className=" py-8 px-20 lg:p-12 gap-8 justify-center  items-center lg:items-start">
         <Headings as="h2" className="text-peach-600  font-bold">
           The real deal

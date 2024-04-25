@@ -1,6 +1,6 @@
 import DesignLink from "../features/Designs/DesignLink";
 import Hero from "../features/Designs/Hero";
-import WebDesignDesigns from "../features/Designs/webDesignDesigns";
+import WebDesignDesigns from "../features/Designs/WebDesignDesigns";
 
 function WebDesign() {
   return (

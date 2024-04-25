@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Headings from "../../ui/Headings";
 import { useNavigate } from "react-router-dom";
+import { useInview } from "../../hooks/useInview";
 
 export const BackGroundImage = styled.div`
   display: flex;
@@ -40,12 +41,17 @@ export const BackGroundImage = styled.div`
 
 function LinkBg() {
   const navigate = useNavigate();
-
+   const { ref, style } = useInview();
+ 
   function handleNavigate(path) {
     navigate(path);
   }
   return (
-    <div className="flex flex-col lg:flex-row gap-8  my-40 w-full">
+    <div
+      className="flex flex-col lg:flex-row gap-8  my-40 w-full"
+      ref={ref}
+      style={style}
+    >
       <div
         className=" flex items-center justify-center lg:w-1/2"
         onClick={() => handleNavigate("/webDesign")}

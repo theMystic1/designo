@@ -9,13 +9,28 @@ import GraphicsDesign from "./pages/GraphicsDesign";
 import Locations from "./pages/Locations";
 import WebDesign from "./pages/WebDesign";
 import GlobalStyles from "./Styles/GlobalStyles";
+import { Toaster } from "react-hot-toast";
+import ScrollToTopOnMount from "./ui/ScrollToTopOnMount";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 // import GlobalStyles from "./ui/Styles/GlobalStyles";
+
+const query = new QueryClient({
+  defaultOptions: {
+    queries: {
+      // staleTime: 60 * 1000,
+      staleTime: 0,
+    },
+  },
+});
 
 function App() {
   return (
-    <>
+    <QueryClientProvider client={query}>
+      <ReactQueryDevtools initialIsOpen={false} />
       <GlobalStyles />
       <BrowserRouter>
+        <ScrollToTopOnMount />
         <Routes>
           <Route element={<AppLayout />}>
             <Route index element={<Home />} />
@@ -28,8 +43,28 @@ function App() {
             <Route path="*" element={<PageNotFound />} />
           </Route>
         </Routes>
-      </BrowserRouter>
-    </>
+      </BrowserRouter>{" "}
+      <Toaster
+        position="top-right"
+        gutter={12}
+        containerStyle={{ margin: "8px" }}
+        toastOptions={{
+          success: {
+            duration: 5000,
+          },
+          error: {
+            duration: 5000,
+          },
+          style: {
+            fontSize: "16px",
+            maxWidth: "500px",
+            padding: "16px 24px",
+            backgroundColor: "#ffff",
+            color: "#1d1c1e",
+          },
+        }}
+      />
+    </QueryClientProvider>
   );
 }
 

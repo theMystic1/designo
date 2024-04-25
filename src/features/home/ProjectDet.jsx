@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Headings from "../../ui/Headings";
 import StyledParagraph from "../../ui/StyledParagraph";
+import { useInview } from "../../hooks/useInview";
 
 const StyledDetails = styled.div`
   display: flex;
@@ -19,8 +20,14 @@ const Article = styled.article`
 `;
 
 function ProjectDet() {
+  const { ref, style } = useInview();
+
   return (
-    <StyledDetails className="flex-col px-4 lg:flex-row">
+    <StyledDetails
+      className="flex-col px-4 lg:flex-row"
+      ref={ref}
+      style={style}
+    >
       <Article className="flex-col md:flex-row lg:flex-col">
         <img
           src="/assets/home/desktop/illustration-passionate.svg"

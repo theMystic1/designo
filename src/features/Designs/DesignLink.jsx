@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Headings from "../../ui/Headings";
 import { BackGroundImage } from "../home/LinkBg";
+import { useInview } from "../../hooks/useInview";
 
 function DesignLink({ path, header, bgimg }) {
   const navigate = useNavigate();
@@ -8,8 +9,15 @@ function DesignLink({ path, header, bgimg }) {
   function handleNavigate(path) {
     navigate(path);
   }
+  const { ref, style } = useInview();
+
+ 
   return (
-    <div className="flex items-center flex-col w-full gap-8  lg:flex-row">
+    <div
+      className="flex items-center flex-col w-full gap-8  lg:flex-row"
+      ref={ref}
+      style={style}
+    >
       <BackGroundImage
         bgimage={bgimg[0]}
         onClick={() => handleNavigate(path[0])}

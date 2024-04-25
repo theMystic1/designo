@@ -1,15 +1,22 @@
 import styled from "styled-components";
 import Headings from "../../ui/Headings";
 import StyledButton from "../../ui/StyledButton";
+import { useInview } from "../../hooks/useInview";
 
 const Details = styled.div`
   background-image: url("/assets/shared/desktop/bg-pattern-three-circles.svg");
 `;
 
 function DetailsDetails({ location }) {
+  const { ref, style } = useInview();
+
   const { name, img } = location;
   return (
-    <div className="flex flex-col items-center justify-center gap-8">
+    <div
+      className="flex flex-col items-center justify-center gap-8"
+      ref={ref}
+      style={style}
+    >
       <Details className="">
         <img src={img} alt={name} />
       </Details>

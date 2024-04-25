@@ -1,11 +1,18 @@
+import { useInview } from "../../hooks/useInview";
 import Headings from "../../ui/Headings";
 import { StyledHero } from "../../ui/Hero";
 import StyledParagraph from "../../ui/StyledParagraph";
 import { BigFlex, SmallFlex } from "./AboutFlex";
 
 function AboutTalent() {
+  const { ref, style } = useInview();
+
   return (
-    <StyledHero className="flex  lg:flex-row-reverse flex-col-reverse bg-peach-200 bg-opacity-50 sm:mt-[250px] my-[200px]">
+    <StyledHero
+      className="flex  lg:flex-row-reverse flex-col-reverse bg-peach-200 bg-opacity-50 sm:mt-[250px] my-[200px]"
+      ref={ref}
+      style={style}
+    >
       <BigFlex
         className=" py-12 px-20 lg:p-12 gap-8 justify-center items-center lg:items-start"
         type="reverse"

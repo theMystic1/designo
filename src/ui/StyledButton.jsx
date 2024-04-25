@@ -5,6 +5,11 @@ const StyledButton = styled.button`
   padding: 1.2rem 4rem;
   text-transform: uppercase;
   font-weight: 600;
+  &:hover {
+    background-color: #ffad9b;
+    transition: all 600ms;
+    color: #ffff;
+  }
 
   ${(props) =>
     props.type === "primary" &&
@@ -18,11 +23,6 @@ const StyledButton = styled.button`
     css`
       background-color: #e7816b;
       color: #ffffff;
-
-      &:hover {
-        background-color: #ffad9b;
-        transition: all 600ms;
-      }
     `}
 `;
 

@@ -6,6 +6,7 @@ import StyledParagraph from "../../ui/StyledParagraph";
 function HeroSection() {
   return (
     <HeroSec className="flex flex-col lg:flex-row  justify-center items-center lg:justify-between md:px-20 lg:px-8 py-16 sm:items-center relative z-50">
+      
       <div className="lg:w-1/2 w-full flex flex-col lg:items-start lg:justify-start items-center justify-center relative mt-28">
         <Headings className="text-white-0  text-center lg:text-start font-bold mb-10">
           Award-winning custom designs and digital branding solutions
