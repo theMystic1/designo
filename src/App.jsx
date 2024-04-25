@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import AppLayout from "./ui/AppLayout";
 import Home from "./pages/Home";
 import PageNotFound from "./pages/PageNotFound";
@@ -13,7 +13,6 @@ import { Toaster } from "react-hot-toast";
 import ScrollToTopOnMount from "./ui/ScrollToTopOnMount";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-// import GlobalStyles from "./ui/Styles/GlobalStyles";
 
 const query = new QueryClient({
   defaultOptions: {
@@ -33,7 +32,8 @@ function App() {
         <ScrollToTopOnMount />
         <Routes>
           <Route element={<AppLayout />}>
-            <Route index element={<Home />} />
+            <Route index element={<Navigate replace to="home" />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/appdesign" element={<AppDesign />} />
             <Route path="/about" element={<About />} />
             <Route path="/contacts" element={<Contacts />} />
