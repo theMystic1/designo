@@ -12,7 +12,7 @@ dist
 dist-ssr
 *.local
 starter-code
-.README.md
+README.md
 
 # Editor directories and files
 .vscode/*
