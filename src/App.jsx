@@ -40,8 +40,8 @@ function App() {
             <Route path="graphicsDesign" element={<GraphicsDesign />} />
             <Route path="locations" element={<Locations />} />
             <Route path="webDesign" element={<WebDesign />} />
+            <Route path="*" element={<PageNotFound />} />
           </Route>
-          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
       <Toaster
