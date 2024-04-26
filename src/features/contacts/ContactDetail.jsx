@@ -33,6 +33,23 @@ const Input = styled.input`
   }
 `;
 
+const TextArea = styled.textarea`
+  border: none;
+  border-bottom: 0.1rem solid #f1f3f5;
+  background-color: transparent;
+  padding: 4rem 4rem 1rem 0.4rem;
+  width: 100%;
+  font-size: 1.6rem;
+  &::placeholder {
+    color: #ffffff;
+    padding: 1rem;
+  }
+
+  &:focus {
+    border-bottom: 0.3rem solid #ffffff;
+  }
+`;
+
 function Error({ children, isError }) {
   return (
     <span className="flex gap-4 items-center absolute right-0 bottom-4 italic">
@@ -54,13 +71,13 @@ function ContactDetail() {
     console.log(data.message);
     reset();
   }
-  const { ref, style } = useInview();
+  // const { ref, style } = useInview();
 
   return (
     <HeroSec
       className="text-white-200 flex flex-col lg:flex-row gap-8 p-20"
-      ref={ref}
-      style={style}
+      // ref={ref}
+      // style={style}
     >
       <div className="lg:w-1/2 flex flex-col justify-center gap-10 lg:px-20">
         <Headings>Contact us</Headings>
@@ -124,10 +141,7 @@ function ContactDetail() {
         </FormRow>
 
         <FormRow>
-          <Input
-            as="textarea"
-            cols={"20"}
-            rows={"5"}
+          <TextArea
             id="message"
             placeholder="Your message"
             {...register("message", {
