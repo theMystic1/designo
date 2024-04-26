@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router-dom";
+
 function PageNotFound() {
+  const navigate = useNavigate();
   return (
     <div>
-      Invalid url
-      <button>Go back</button>
+      <p className="text-2xl"> Invalid url</p>
+      <button onClick={() => navigate(-1)}>Go back</button>
     </div>
   );
 }
