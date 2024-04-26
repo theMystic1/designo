@@ -10,7 +10,7 @@ import Locations from "./pages/Locations";
 import WebDesign from "./pages/WebDesign";
 import GlobalStyles from "./Styles/GlobalStyles";
 import { Toaster } from "react-hot-toast";
-import ScrollToTopOnMount from "./ui/ScrollToTopOnMount";
+// import ScrollToTopOnMount from "./ui/ScrollToTopOnMount";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
@@ -29,7 +29,7 @@ function App() {
       <ReactQueryDevtools initialIsOpen={false} />
       <GlobalStyles />
       <BrowserRouter>
-        <ScrollToTopOnMount />
+        {/* <ScrollToTopOnMount /> */}
         <Routes>
           <Route element={<AppLayout />}>
             <Route index element={<Navigate replace to="/home" />} />
