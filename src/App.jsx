@@ -33,7 +33,7 @@ const query = new QueryClient({
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
-    errorElement: <PageNotFound />,
+    // errorElement: <PageNotFound />,
 
     children: [
       {
