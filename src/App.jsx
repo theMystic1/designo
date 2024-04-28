@@ -17,7 +17,7 @@ import Locations from "./pages/Locations";
 import WebDesign from "./pages/WebDesign";
 import GlobalStyles from "./Styles/GlobalStyles";
 import { Toaster } from "react-hot-toast";
-// import ScrollToTopOnMount from "./ui/ScrollToTopOnMount";
+import ScrollToTopOnMount from "./ui/ScrollToTopOnMount";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
@@ -30,56 +30,56 @@ const query = new QueryClient({
   },
 });
 
-const router = createBrowserRouter([
-  {
-    element: <AppLayout />,
-    // errorElement: <PageNotFound />,
+// const router = createBrowserRouter([
+//   {
+//     element: <AppLayout />,
+//     errorElement: <PageNotFound />,
 
-    children: [
-      {
-        path: "/home",
-        element: <Home />,
-      },
-      {
-        path: "/appdesign",
-        element: <AppDesign />,
-      },
-      {
-        path: "/about",
-        element: <About />,
-      },
-      {
-        path: "/contacts",
-        element: <Contacts />,
-      },
-      {
-        path: "/graphicsDesign",
-        element: <GraphicsDesign />,
-      },
-      {
-        path: "/locations",
-        element: <Locations />,
-      },
-      {
-        path: "/webDesign",
-        element: <WebDesign />,
-      },
-      // {
-      //   path: "*",
-      //   element: <Navigate to="/" />,
-      // },
-    ],
-  },
-]);
+//     children: [
+//       {
+//         path: "/home",
+//         element: <Home />,
+//       },
+//       {
+//         path: "/appdesign",
+//         element: <AppDesign />,
+//       },
+//       {
+//         path: "/about",
+//         element: <About />,
+//       },
+//       {
+//         path: "/contacts",
+//         element: <Contacts />,
+//       },
+//       {
+//         path: "/graphicsDesign",
+//         element: <GraphicsDesign />,
+//       },
+//       {
+//         path: "/locations",
+//         element: <Locations />,
+//       },
+//       {
+//         path: "/webDesign",
+//         element: <WebDesign />,
+//       },
+//       // {
+//       //   path: "*",
+//       //   element: <Navigate to="/" />,
+//       // },
+//     ],
+//   },
+// ]);
 
 function App() {
   return (
     <QueryClientProvider client={query}>
       <ReactQueryDevtools initialIsOpen={false} />
       <GlobalStyles />
-      <RouterProvider router={router} />
+      {/* <RouterProvider router={router} /> */}
 
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <ScrollToTopOnMount />
         <Routes>
           <Route element={<AppLayout />}>
@@ -94,7 +94,7 @@ function App() {
             <Route path="*" element={<PageNotFound />} />
           </Route>
         </Routes>
-      </BrowserRouter> */}
+      </BrowserRouter>
       <Toaster
         position="top-right"
         gutter={12}
