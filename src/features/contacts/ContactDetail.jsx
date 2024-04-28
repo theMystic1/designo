@@ -5,7 +5,7 @@ import StyledParagraph from "../../ui/StyledParagraph";
 import StyledButton from "../../ui/StyledButton";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { useInview } from "../../hooks/useInview";
+// import { useInview } from "../../hooks/useInview";
 
 const Form = styled.form`
   display: inline-block;
